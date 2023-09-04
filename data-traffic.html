@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+
+    .text-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/*    gap: 10px;*/
+    padding-top: px;
+    }
+
+    .text-centerA {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+/*    gap: 10px;*/
+    padding-top: 275px;
+    }
+
+    /* 全国电信10G5天 */
+    .china_net {
+    color: #409eff;
+    font-weight: bold;
+    font-size: 20px;
+    }
+    /* 手机号 */
+    .phone_num {
+    width: 306px;
+    height: 30px;
+    padding: 5px 13px;
+    }
+
+    /* 定义方形输入框 */
+    .square-input {
+    width: 180px;
+    height: 30px;
+    padding: 5px 13px;
+    margin-right: 20px;
+    }
+
+    /* error提示框 */
+    .error-input {
+    width: 180px;
+    height: 30px;
+    padding: 5px 15px;
+    margin-right: 20px;
+    }
+
+    /* 定义buttonA */
+    .dark-blue-buttonA {
+    background-color: #409eff;
+    border: none;
+    color: white;
+    padding: 10px 35px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    }
+
+    /* 定义buttonB */
+    .dark-blue-buttonB {
+    background-color:  #a0cfff;
+    border: none;
+    color: white;
+    padding: 10px 145px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+/*    margin: 40px 200px;*/
+    cursor: not-allowed;
+    }
+
+    /* 定义红色文本 */
+    .red {
+      color: red;
+    }
+    #inputB {
+    cursor: not-allowed;
+    }
+
+
+  .line {
+    border: 2px dashed #000;
+    padding: 20px;
+    border-radius: 15px;
+    border-color: #409eff;;
+    position: relative;
+    color: #409eff;
+    line-height: 1.8;
+    width: 290px;
+  }
+
+  .stringB {
+    position: absolute;
+    top: -17px;
+    left: 10px;
+    background-color: white;
+    padding: 0 5px;
+    z-index: 1;
+    color: #409eff;
+    font-weight: bold;
+  }
+
+    </style>
+</head>
+<body>
+    <!-- 第一行 -->
+    <div class="text-centerA">
+      <h1 class="china_net">全国电信10G5天</h1>
+    </div>
+
+    <!-- 第二行 -->
+    <div class="text-center">
+        <input type="text" id="inputA" class="phone_num" placeholder="请输入手机号" maxlength="11" pattern="[0-9]{11}">
+        <!-- <br><br> -->
+    </div>
+
+    <!-- 第三行 -->
+    <div><div class="text-center">
+        <input type="text" id="inputB" class="square-input" placeholder="请输入验证码" disabled><br><br><br><br>
+        <button id="buttonA" class="dark-blue-buttonA"  onclick="checkInputA()">发送</button>
+    </div>
+
+    <!-- 第四行new -->
+    <div class="text-center">
+        <div input type="text" id="error" class="red" style="display: none;">请输入11位手机号！</div>
+    </div>
+
+
+    <!-- 第五行 -->
+    <div class="text-center">
+        <button id="buttonB" class="dark-blue-buttonB"  disabled>下一步</button><br><br><br><br>
+    </div>
+
+    <!-- 第六行——结束 -->
+    <div class="text-center">
+      <div class="line">
+        <div class="stringB">充值前须知：</div>
+        1、仅限全国电信号码充值<br>
+        2、到账10G5天流量包，可叠加充值<br>
+        3、欠费、停机、销户等异常状态，不能充值<br>
+        4、短信通知流量到账后再使用，1-10分钟内到账<br>
+        5、如有其他疑问，请咨询客服
+      </div>
+    </div>
+    <script>
+        function checkInputA() {
+            var inputA = document.getElementById("inputA").value;
+            if (inputA.length !== 11 || !/^[0-9]+$/.test(inputA)) {
+                document.getElementById("error").style.display = "block";
+            } else {
+                document.getElementById("error").style.display = "none";
+                window.location.href = "https://www.bing.com";
+            }
+        }
+    </script>
+</body>
+</html>
